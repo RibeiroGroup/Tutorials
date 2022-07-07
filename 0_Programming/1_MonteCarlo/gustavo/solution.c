@@ -43,7 +43,7 @@ int main() {
         }
     }
 
-    pi = (float) hit / N;
+    pi = 4.0 * hit / N;
 
     printf("Estimated value of pi: %f", pi);
 
