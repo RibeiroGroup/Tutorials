@@ -38,7 +38,7 @@ I encourage you to solve the problem using the three languages. Starting with C!
 
 ### Basic structure and compilation
 Your C code must be wrapped within a main function. For example, let us look at a simple hello world code
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -63,7 +63,7 @@ where `mycode.c` is the name of the file containing your C code. The file must e
 
 ### Random Numbers
 Generating random numbers in C is rather cumbersome. You can use the following function to generate a random `Float64` (called `double` in C) between -1.0 and 1.0.
-```
+```c
 #include <stdlib.h>
 
 // Auxiliary function to compute random numbers from -1.0 to 1.0
@@ -74,14 +74,14 @@ double get_rand() {
 > Do not forget the `<stdlib.h>` at the top of your code!!
 
 You will also need to add the following lines within your `main` function. 
-```
+```c
 // This is needed to generate random numbers
 time_t t;
 srand((unsigned) time(&t));
 ```
 #### Keyboard input
 You can have your code to receive an input from the terminal using the function `scanf`. For example, the code below uses `scanf` to test if the input number is odd or even. Try it out!
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -100,7 +100,7 @@ int main() {
 
 #### Template
 You can use the following skeleton to start writing your solution
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -135,7 +135,7 @@ int main() {
 ### Basic structure
 
 Your python code does not need any specific structure, in fact, a hello world can be as simple as
-```
+```python
 print("Hello World!")
 ```
 You can run the code from your terminal using
@@ -153,7 +153,7 @@ Remember the following
 ### Random numbers
 
 Use the function `uniform` from the module `random` to generate random numbers over the desired interval. For example, if you want to generate a random number from -5.0 to 5.0 you can use:
-```
+```python
 import random
 
 random.uniform(-5.0, 5.0)
@@ -162,7 +162,7 @@ random.uniform(-5.0, 5.0)
 ### Keyboard input
 
 The function `input` can be used to read in a `string` passed from the terminal. You will need to convert that `string` into an `int`. Look at the following snippet for reference
-```
+```python
 print("Give me a number:" )
 x = int(input())
 if x % 2 == 0:
@@ -180,7 +180,7 @@ Julia is not installed by default in most systems. Thus, you may need to [downlo
 ### Basic structure and compilation
 
 Like in Python, Julia does not have a mandatory complicate structure. The Hello World looks just like Python
-```
+```julia
 println("Hello World")
 ```
 From the terminal, you can compile and run the code as
@@ -208,7 +208,7 @@ julia> ]
 ```
 
 Finally, having it installed you can generate random numbers as
-```
+```julia
 using Distributions
 
 rand(Uniform(-1,1))
@@ -217,7 +217,7 @@ rand(Uniform(-1,1))
 ### Keyboard input
 
 The input function in julia is `readline`. Similar to Python, the value read is a `String` and need to be converted to a `Int`. This is done using the `parse` function. Let us look again at our odd/even routine
-```
+```julia
 println("Give me a number:" )
 x = parse(Int, readline())
 if x % 2 == 0
@@ -229,7 +229,7 @@ end
 
 ### Template
 You can use the following skeleton to start writing your solution
-```
+```julia
 using Distributions
 
 function get_pi(N)
