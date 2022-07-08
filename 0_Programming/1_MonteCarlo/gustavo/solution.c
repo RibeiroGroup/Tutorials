@@ -25,7 +25,7 @@ double get_pi(int N) {
         x = get_rand();
         y = get_rand();
 
-        // Computes distance from origin
+        // Compute distance from origin
         dist = sqrt(x*x + y*y);
 
         // Check if the point lies within the circle
