@@ -3,7 +3,7 @@
 Imagine you have a circle of radius inscribed in a square. The radius of the circle is equal half the length of the square. Now imagine we pick a random point on this figure, that is, we select two random numbers ($x$, $y$) and place a dot at the coordinate. What is the probability that the random point is found within the circle?
 
 <p align="center">
-<img src="dotcircle.png" alt="drawing" width="400"/>
+<img src="assets/dotcircle.png" alt="drawing" width="400"/>
 </p>
 
 This probability is equal to the ratio between the area of the circle and the square: $P = \frac{A_\text{circle}}{A_\text{square}} = \frac{\pi}{4}$
@@ -33,6 +33,11 @@ For this project, I will write instructions for three programming languages:
 > Julia is a fairly new programming language that has been increasingly popular in scientific computing. It uses a *just-in-time* compilation scheme that provides the dynamic experience without sacrificing too much performance. 
 
 I encourage you to solve the problem using the three languages. Starting with C! Once you solve the problem on C, moving it to Python and Julia should be fairly easy. Below, I provide language specific instructions.
+
+
+<p align="center">
+<img src="assets/c.png" alt="drawing" height="100"/>
+</p>
 
 ## C instructions
 
@@ -128,6 +133,11 @@ int main() {
     return 0;
 }
 ```
+
+<p align="center">
+<img src="assets/python.svg" alt="drawing" height="100"/>
+</p>
+
 ## Python instructions
 
 > I highly recommend you to go through C first, the other way around is way more painful. Plus, while Python makes a lot of things easier, it also takes some control away from you and masks the real complexity/beauty of what you are doing. Is this an statement saying we should always use C? No! But making the effort to understand the basics of it will help you to better appreciate the remarkable things involved in writing and running code in this magic piece of silicon! 
@@ -170,6 +180,10 @@ if x % 2 == 0:
 else:
     print("You gave me an ODD number!")
 ```
+
+<p align="center">
+<img src="assets/julia.png" alt="drawing" height="100"/>
+</p>
 
 ## Julia instructions
 
