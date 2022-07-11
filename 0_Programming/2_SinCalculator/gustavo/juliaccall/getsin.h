@@ -1,0 +1,1 @@
+extern double get_sin(double x, double precision);
