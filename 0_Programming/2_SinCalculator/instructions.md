@@ -6,38 +6,38 @@ $\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!}
 
 Note that the $n$-th element of this series is $(-1)^n \frac{x^n}{n!}$ where $n$ is an odd integer.
 
-Your function must take in two arguments, an angle value and a precision parameter. Let us take a look at the syntax for defining function
+Your function must take in two arguments, an angle value and a precision parameter. Let us take a look at the syntax for defining functions
 
-1. C
+- C
 
 ```c
 double get_sin(double x, double precision) {
     // Your code goes here
 }
 ```
-> Note that in C, the syntax start with the return type of the function
-2. Python
+> Note that in C, the syntax starts with the return type of the function
+- Python
 ```python
 def get_sin(x, precision):
     # Your code goes here
 ```
-3. Julia
+- Julia
 ```julia
 function get_sin(x, precision)
     # Your code goes here
 end
 ```
-> In both Python and Julia we can define arguments with a predefined value `get_sin(x, precision = 1e-5)`. If this function is called without the precision argument, the standard value (`1e-5`) is used.
+> In both Python and Julia we can define arguments with a predefined value, e.g. `get_sin(x, precision = 1e-5)`. If this function is called without the precision argument, the standard value (`1e-5`) is used.
 
 Inside your function, you must construct a loop structure that compute elements of the Taylor series successively until the computed term is smaller than the `precision` parameter. When that happens you must quit the loop.
 
-Another important parameter you must include is the maximum number of iterations and a corresponding iteration counter. This parameters must be used to ensure that the loop will break after a number of iterations. This is necessary because for certain values (very large values of $x$) our function converges very slowly, and we do not want to be stuck in it forever. 
+You also need to control the number of iteration by creating iteration counter and establishing a maximum number of iterations. This is necessary because for certain values (very large values of $x$) our function converges very slowly, and we do not want to be stuck in it forever. **Whenever you have a loop that only quits upon convergence, you must enforce a maximum number of iterations.**
 
 You can use `1e-5` and `100` as your standard `precision` and maximum number of iterations, respectively. 
 
 ## Accuracy test
 
-To verify if our function is working as expected, we should test it against known values of the sin function. Compute the output of your function on the following angles and print out the error with respect to the tabulated result.
+To verify if our function is working as expected, we should test it against known values of the sine function. Compute the output of your function on the following angles and print out the error with respect to the tabulated result.
 
 | $x$ | $\sin(x)$ |
 |---|:---:|
@@ -51,7 +51,7 @@ To verify if our function is working as expected, we should test it against know
 | $\frac{7\pi}{4}$ | $-\frac{\sqrt{2}}{2}$ | 
 | $2\pi$ | $0$ | 
 
-Here's the expected output (from my Python solution)
+Here is the expected output (from my Python solution)
 ```
 Angle:  0.000000  Error: 0.000000
 Angle:  0.785398  Error: 0.000000
@@ -66,9 +66,9 @@ Angle:  6.283185  Error: 0.000000
 
 ## Performance test
 
-The final step is to verify the performance of our code by measuring the runtime for a large number of function calls. Write a loop that execute you code a million times and print the elapsed time.
+The final step is analyze the performance of our code by measuring the runtime for a large number of calls. Write a loop that execute you code a million times and print the elapsed time.
 
-1. C
+- C
 To measure runtime in C you will need to include a few lines of code. You can use the following template
 ```c
 #include <time.h>
@@ -83,7 +83,7 @@ printf ("Total time for a million runs: %f seconds\n",
         (end.tv_nsec - begin.tv_nsec) / 1000000000.0 +
         (end.tv_sec  - begin.tv_sec));
 ```
-2. Python
+- Python
 
 In Python the function `time` from the library `time` can be used to get the time before and after the code is ran. Subtracting the two values yields the elapsed time. 
 ```python
@@ -97,7 +97,7 @@ t = time() - t
 print("Time for a million runs: {:f} seconds.".format(t))
 ```
 
-3. Julia
+- Julia
 
 Julia offers a simple macro `@elapsed` that can be wrapped around a portion of code.
 ```julia
