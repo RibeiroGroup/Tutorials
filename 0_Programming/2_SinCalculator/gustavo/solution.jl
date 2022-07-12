@@ -1,5 +1,5 @@
 ### Sin function
-@inline function get_sin(θ, precision = 10^-5)
+function get_sin(θ, precision = 10^-5)
 
     # Set up an iteration counter and max number of iterations
     max_iter = 100

@@ -63,17 +63,14 @@ int main() {
 
     // Performance check
     struct timespec begin, end;
+    int l = 0;
     clock_gettime(CLOCK_REALTIME, &begin);
-    for (int i; i < 1000000; i++) {
-        for (int j; j < 9; j++) {
-            get_sin(angles[i], 1e-5);
-            sleep(1);
-        }
+    while (l < 9000000) {
+        get_sin(angles[l%9], 1e-5);
+        l++;
     }
     clock_gettime(CLOCK_REALTIME, &end);
     double elapsed = (double) (end.tv_nsec - begin.tv_nsec) * 1e-9;
-    //double t = (double)(toc -tic) / CLOCKS_PER_SEC;
-    //// I DONT THINK THIS WORKS
     printf("Time for a million runs: %f seconds.\n", elapsed);
 
     return 0;
