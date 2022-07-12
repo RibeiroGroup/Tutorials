@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
-#include <unistd.h>
 
 double get_sin(double x, double precision) {
 
@@ -70,8 +69,8 @@ int main() {
         l++;
     }
     clock_gettime(CLOCK_REALTIME, &end);
-    double elapsed = (double) (end.tv_nsec - begin.tv_nsec) * 1e-9;
-    printf("Time for a million runs: %f seconds.\n", elapsed);
-
+    printf ("Total time for a million runs: %f seconds\n",
+            (end.tv_nsec - begin.tv_nsec) / 1000000000.0 +
+            (end.tv_sec  - begin.tv_sec));
     return 0;
 }
