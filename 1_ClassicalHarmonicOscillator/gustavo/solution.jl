@@ -1,11 +1,13 @@
 using Makie
-using WGLMakie
+using CairoMakie
 
 function simulate(δ, ω = 5.0, y0 = 2.0, N = 5000, duration = 15.0, E0 = 20.0, ton = 5.0, toff = 10.0; return_field = false)
 
+    # Initilize arrays for positions (y) and energies
     y = zeros(N)
     Energy = zeros(N)
 
+    # Set frequency of the electrit wave 
     ωE = ω*δ
 
     # Start at rest
@@ -13,14 +15,17 @@ function simulate(δ, ω = 5.0, y0 = 2.0, N = 5000, duration = 15.0, E0 = 20.0, 
     y[2] = y0 
     Energy[1] = 0.5*(ω * y0)^2
     Energy[2] = 0.5*(ω * y0)^2
+
+    # Determine time step from number of points
     δt = duration/(N-1)
     t = [i*δt for i = 0:(N-1)]
 
     for i = 3:N
 
-        # Get accelation
+        # Get elastic force
         a = - ω^2 * y[i-1]
-        # Get electrict force
+
+        # Include electrict force
         if ton < t[i] < toff 
             a += E0 * sin(-ωE*t[i])
         end
@@ -41,14 +46,33 @@ function simulate(δ, ω = 5.0, y0 = 2.0, N = 5000, duration = 15.0, E0 = 20.0, 
     end
 end
 
-function position_plot(δ, ω = 5.0, y0 = 2.0, N = 5000, duration = 15.0, E0 = 20.0, ton = 5.0, toff = 10.0)
+function position_plot(δ::AbstractFloat, ω = 5.0, y0 = 2.0, N = 5000, duration = 15.0, E0 = 20.0, ton = 5.0, toff = 10.0)
 
     t, y, Ef, E = simulate(δ, ω, y0, N, duration, E0, ton, toff, return_field = true)
     fig = Figure()
-    ax = Axis(fig[1,1])
-    lines!(ax, t, y)
-    lines!(ax, t, Ef, color=:yellow)
+    ax = Axis(fig[1,1], xlabel = "Time", ylabel = "Amplitude")
+    lines!(ax, t, y, label="Position")
+    lines!(ax, t, Ef, color=:yellow, label="E field")
+    axislegend(position = :rb)
     display(fig)
+end
+
+function position_plot(δ::Vector{Float64}, ω = 5.0, y0 = 2.0, N = 5000, duration = 15.0, E0 = 20.0, ton = 5.0, toff = 10.0)
+
+    fig = Figure()
+    L = length(δ)
+    @assert L % 2 == 0
+    δ = reshape(δ, L ÷ 2, 2)
+    for i = 1:(L ÷ 2)
+        for j = 1:2
+            t, y, Ef, E = simulate(δ[i,j], ω, y0, N, duration, E0, ton, toff, return_field = true)
+            ax = Axis(fig[i,j], xlabel = "Time", ylabel = "Amplitude", title="δ = $(δ[i,j])")
+            lines!(ax, t, y, label="Position")
+            lines!(ax, t, Ef, color=:yellow, label="E field")
+        end
+    end
+    display(fig)
+    save("positions.png", fig, px_per_unit = 8)
 end
 
 ### Compute energy transfered
@@ -75,9 +99,12 @@ function energy_transferred(δvals; ω = 5.0, y0 = 2.0, N = 5000, duration = 15.
 
     println(ΔE)
 
+    fontsize_theme = Theme(fontsize = 25)
+    set_theme!(fontsize_theme)
     fig = Figure()
-    ax = Axis(fig[1,1])
+    ax = Axis(fig[1,1], xlabel = "δ", ylabel = "Energy transferred")
     lines!(ax, δvals, ΔE)
+    save("energy.png", fig, px_per_unit = 4)
     display(fig)
 end
 
