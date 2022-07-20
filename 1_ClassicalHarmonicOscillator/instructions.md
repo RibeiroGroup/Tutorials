@@ -45,7 +45,7 @@ where we used the dot notation for time detivatives. Defining the time step $\De
 
 $\Large y(t_{n+1}) = y(t_n) + \dot{y}(t_n)\Delta t + \frac{1}{2}\ddot{y}(t_n)\Delta t^2 + \frac{1}{6}\dot{}\ddot{y}(t_n)\Delta t^3 + \mathcal{O}(\Delta t^4) \qquad$ (2)
 
-Alternatively, we could inquire the position of the particle a previous time step $t_{n-1} = x$. Using this definition equation 1 becomes
+Alternatively, we could inquire the position of the particle at previous time step $t_{n-1} = x$. Using this definition equation 1 becomes
 
 $\Large y(t_{n-1}) = y(t_n) + \dot{y}(t_n)(t_{n-1}-t_n) + \frac{1}{2}\ddot{y}(t_n)(t_{n-1}-t_n)^2 + \frac{1}{6}\dot{}\ddot{y}(t_n)(t_{n-1}-t_n)^3 + \mathcal{O}[(t_{n-1}-t_n)^4] $
 
