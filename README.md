@@ -12,4 +12,4 @@
 
 ## Light-Matter Interactions
 
-1. [Classical Harmonic Oscillator interacting with light](1_ClassicalHarmonicOscillator/instructions.md)
+1. [Classical Harmonic Oscillator interacting with light (fixed periodic field)](1_ClassicalHarmonicOscillator/instructions.md)
