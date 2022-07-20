@@ -1,19 +1,19 @@
-# Classical Harmonic Oscillator interacting with light
+# Classical Harmonic Oscillator interacting with light (fixed periodic field)
 
-In this project we will study the motion and energetics of a classical harmonic oscillator perturbed by an oscillating electric field. Assuming that the mechanical oscillator is charged, the interaction with the electric field creates an oscillating force. The main goal here is to determine how efficient this interaction is as a function of the detuning (i.e. the difference between the frequency of the mechanical and the electrical oscillators: $\delta = \omega_\text{HO} - \omega_E$). Throughout this project, we will use arbitrary units where the speed of light, mass and charge of the oscillator are set to $1$.
+In this project we will study the motion and energetics of a classical harmonic oscillator perturbed by an oscillating electric field. Assuming that the mechanical oscillator displacement from equilibrium represents a dipolar motion (e.g., the displacement could correspond to a normal-mode vibration of a heteronuclear diatomic molecule or the motion of an effective "electronic cloud" near a nucleus with charge of equal magnitude as the cloud in which case the model below would represent the interaction of an atom with light), the interaction with the electric field creates an oscillating force. The main goal here is to determine how efficient this interaction is as a function of the detuning (i.e. the difference between the frequency of the mechanical and the electrical oscillators: $\delta = \omega_\text{HO} - \omega_E$). Throughout this project, we will use arbitrary units where the speed of light, mass and charge of the oscillator are set to $1$.
 
 ## Model
 
-The coordinate systems of the problem is illustrated in the figure below
+The coordinate system of the problem is illustrated in the figure below
 <p align="center">
 <img src="assets/oscillator.png" alt="drawing" width="400"/>
 </p>
 
-The mechanical oscillator is constrained to move harmonically along the $y$ direction. Its rest position is set at the origin ($x = 0$, $y = 0$). Before the electric field is turned on, the equation of motion for the system is the well-known harmonic oscillator differential equation
+The mechanical oscillator is constrained to move harmonically along the $y$ direction. Its rest position is set at the origin ($x = 0$, $y = 0$). Before the electric field is turned on, the equation of motion for the system is the well-known harmonic oscillator differential equation (Newton's 2nd law for motion of a point particle near equilibrium)
 
 $\Large m \frac{\partial^2 y}{\partial t^2} = - k y = - m \omega^2 y$ 
 
-Once the electrical field is turned on, we need to account for the electric force acting upon the charged mass.
+Once the electric field is turned on, we need to account for the electric force acting upon the charged mass (dipole).
 
 $\Large F =  \frac{1}{m}\frac{\partial^2 y}{\partial t^2} = -  \omega^2 y + \frac{q}{m}E(t)$ 
 
@@ -57,7 +57,7 @@ Adding equations 2 and 3 yields
 
 $\Large y(t_{n+1}) + y(t_{n-1}) = 2y(t_n) + \ddot{y}(t_n)\Delta t^2 + \mathcal{O}(\Delta t^4)$
 
-from which we find an approximating for the updated position
+from which we find an approximation for the updated position
 
 $\Large y(t_{n+1}) \approx 2y(t_n) - y(t_{n-1})+ \ddot{y}(t_n)\Delta t^2 \qquad$ (4)
 
