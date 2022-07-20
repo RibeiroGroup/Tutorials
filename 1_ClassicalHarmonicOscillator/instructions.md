@@ -65,7 +65,7 @@ $\Large y(t_{n+1}) \approx 2y(t_n) - y(t_{n-1})+ \ddot{y}(t_n)\Delta t^2 \qquad$
 
 Recognizing that $\ddot{y} = \frac{F}{m}$ and defining $y_{i} \equiv y(t_i)$, equation 4 is written as
 
-$\Large y_{n+1} \approx 2y_n - y_{n-1} -\omega^2 y_n+ E_0\sin(\delta \omega t_n)\Delta t^2 \qquad$ (5)
+$\Large y_{n+1} \approx 2y_n - y_{n-1} + (E_0\sin(\delta \omega t_n) -\omega^2 y_n)\Delta t^2 \qquad$ (5)
 
 Starting our model with two position values $y_0$ and $y_1$, we can use equation 5 to update the position of the particle step by step.
 
