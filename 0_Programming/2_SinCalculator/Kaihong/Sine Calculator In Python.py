@@ -1,4 +1,4 @@
-import math\n",
+import math
 def get_sin(x, precision):
    a = 0
    b = precision
