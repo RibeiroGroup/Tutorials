@@ -1,0 +1,19 @@
+import math
+
+from time import time
+t = time()
+
+def get_sin(x):
+    sin1 = 0
+    sin2 = 0
+    for n in range(100):
+        sin1 = sin2
+        sin2 = sin1 +  (-1)**(n) * (x**(2*n+1))  /  math.factorial(n*2+1)
+        if abs(sin2-sin1) < 1e-5:
+            print(round(sin2,5))
+            break;
+            
+get_sin(math.pi)
+
+t = time() - t
+print("Time for a million runs: {:f} seconds.".format(t))
