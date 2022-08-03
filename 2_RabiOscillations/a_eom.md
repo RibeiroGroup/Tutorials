@@ -1,4 +1,4 @@
-# Equation of motion for a superposition state
+# Appendix A: Equation of motion for a superposition state
 
 Consider a state in a quantum superposition
 
