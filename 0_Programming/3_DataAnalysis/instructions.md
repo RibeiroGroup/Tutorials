@@ -104,9 +104,9 @@ julia> parse(Float64, "0.345")
 
 Having our data parse, we can star analyzing/modifying it as needed. Here we will perform a linear regression using the first column as abscissa (x values) and the second column as ordinate (y values). In a linear regression we try to determine the coefficients $A$ and $B$ of the straight line $y = Ax + B$ that minimizes the error with respect to our data. The values of $A$ and $B$ are determined analytically as
 
-$A = \frac{n(\sum_i x_i y_i) - (\sum_i x_i)(\sum_i x_i)}{n(\sum_i x_i^2) - (\sum_i x_i)^2} $
+$\Huge A = \frac{n(\sum_i x_i y_i) - (\sum_i x_i)(\sum_i x_i)}{n(\sum_i x_i^2) - (\sum_i x_i)^2} $
 
-$B = \frac{(\sum_i y_i)(\sum_i x_i^2) - (\sum_i x_i)(\sum_i x_iy_i)}{n(\sum_i x_i^2) - (\sum_i x_i)^2} $
+$\Huge B = \frac{(\sum_i y_i)(\sum_i x_i^2) - (\sum_i x_i)(\sum_i x_iy_i)}{n(\sum_i x_i^2) - (\sum_i x_i)^2} $
 
 *Tips*
 1. In Python, this type of work with arrays is best performed using the `numpy` package.
