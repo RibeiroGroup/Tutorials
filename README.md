@@ -12,4 +12,8 @@
 
 ## Light-Matter Interactions
 
+### Fully classical
 1. [Classical Harmonic Oscillator interacting with light (fixed periodic field)](1_ClassicalHarmonicOscillator/instructions.md)
+
+### Semi-classical
+2. [Transition in a two-level system driven by a time-dependent potential](2_RabiOscillations/instructions.md)
