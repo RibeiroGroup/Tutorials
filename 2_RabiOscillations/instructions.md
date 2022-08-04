@@ -12,21 +12,21 @@ $\Large | \psi \rangle = a |a \rangle + b |b\rangle$
 
 for which equations of motion can be derived (as shown in the [appendix A](a_eom.md))
 
-$\Large \dot{a} = -i b e^{-i\omega_{ba}t} V_{ab}(t)$
+$\Large \dot{a} = -\frac{i}{\hbar} b e^{-i\omega_{ba}t} V_{ab}(t)$
 
-$\Large \dot{b} = -i a e^{i\omega_{ba}t} V_{ab}(t)$
+$\Large \dot{b} = -\frac{i}{\hbar} a e^{i\omega_{ba}t} V_{ab}(t)$
 
 where we have assumed $V_{ab} = (V_{ba})^*$. If we take our time dependent perturbation to be $V_{ab}(t) = V_{ab}\cos(\omega t)$ these equations become
 
-$\Large \dot{a} = -i b e^{-i\omega_{ba}t} V_{ab}\cos(\omega t) \qquad$ (1a)
+$\Large \dot{a} = -\frac{i}{\hbar} b e^{-i\omega_{ba}t} V_{ab}\cos(\omega t) \qquad$ (1a)
 
-$\Large \dot{b} = -i a e^{i\omega_{ba}t} V_{ab}\cos(\omega t) \qquad$ (1b)
+$\Large \dot{b} = -\frac{i}{\hbar} a e^{i\omega_{ba}t} V_{ab}\cos(\omega t) \qquad$ (1b)
 
 Using the complex exponential for for the cosine function, this can also be written as
 
-$\Large \dot{a} = -\frac{i}{2} b  V_{ab} (e^{-i(\omega_{ba}-\omega)t} + e^{-i(\omega_{ba}+\omega)t}) \qquad$ (2a)
+$\Large \dot{a} = -\frac{i}{2\hbar} b  V_{ab} (e^{-i(\omega_{ba}-\omega)t} + e^{-i(\omega_{ba}+\omega)t}) \qquad$ (2a)
 
-$\Large \dot{b} = -\frac{i}{2} a V_{ab} (e^{i(\omega_{ba}-\omega)t} + e^{i(\omega_{ba}+\omega)t})\qquad$ (2b)
+$\Large \dot{b} = -\frac{i}{2\hbar} a V_{ab} (e^{i(\omega_{ba}-\omega)t} + e^{i(\omega_{ba}+\omega)t})\qquad$ (2b)
 
 From this point, analytical expressions for $a$ and $b$ may be obtained invoking the rotating wave approximation (RWA), see [appendix B](b_rwa_analytical.md).
 
@@ -39,7 +39,9 @@ where the Rabi frequency ($\Omega_R$) is
 $\Large \Omega_R = \frac{1}{2\hbar}\sqrt{|V_{ab}|^2 + \hbar^2(\omega_{ba} - \omega)^2}$
 
 
-# Task 1: Studying the RWA solution
+# Task 1: Plot Rabi Oscillations
+
+> **Goal**: Study how the probability of finding the system in the energy level $|b\rangle$ as a function of time.
 
 1. Create a function, `get_Pb`, that takes in a value of $\omega$, $\omega_{ba}$, and $V_{ab}$ and return and array with time and $P(b)$ values. By default you can use time values from 0 to 8000 (atomic units) with time steps of 1. For example
 
@@ -59,16 +61,20 @@ function solutionA(ω_vals, ωba, Vab; t_final = 8000, δt = 1)
     # Plot results!
 end
 ```
-Produce and save a figure with the following parameters:
+3. Produce and save a figure with the following parameters:
 - $\omega$ values: $14400$, $14600$, $14800$, and $15000$ cm ${}^{-1}$.
 - $\omega_{ba} = 15000$ cm $^{-1}$.
 - $V_{ab} = 200$ cm $^{-1}$.
 
-3. Create a third function, `solutionB`, that takes in a range of $\omega$, a $\omega_{ba}$ value and an array of $V_{ab}$ values. For each value of $V_{ab}$ you must
+# Task 2: Plot the probability peak as a function of $\omega$
 
-- Compute the probability profile $P(b)$  across the range of $\omega$ values. (Note that this implies a double loop!).
-- Determine the maximum of value of the distribution ($P_\text{max}$) and a function of $\omega$.
-- Plot $P_\text{max}$ against $\omega$.
+> **Goal**: Study how the maximum probability of finding the system in the energy level $|b\rangle$ depends on the frequency of the oscillating perturbation.
+
+1. Create another function, `solutionB`, that takes in a range of $\omega$ values, a $\omega_{ba}$ value and an array of $V_{ab}$ values. For each value of $V_{ab}$ you must
+
+2. Compute the probability profile $P(b)$  across the range of $\omega$ values. (Note that this implies a double loop!).
+3. Determine the maximum probability of finding the state in the energy level $|b\rangle$ ($P_\text{max}$) for each value of $\omega$.
+4. Plot $P_\text{max}$ against $\omega$.
 
 A template for this function is shown below
 
@@ -102,4 +108,37 @@ Using this function prepare and save a figure with the following parameters:
 - $\omega$ range: from 1400 to 1600, 100 steps. 
 - $\omega_{ba} = 15000$ cm $^{-1}$.
 - $V_{ab}$ values: $50$, $100$, $200$, and $300$ cm $^{-1}$.
+
+# Task 3: Comparing numerical integration to the RWA result
+
+> **Goal**: Assess the accuracy of the rotating wave approximation by numerically integrating the equation of motion for $P(b)$ for a range of $\omega_{ba}$ and $V_{ab}$ parameters.
+
+1. Create a function, `numerical_Pb`, that integrates equation 1.
+
+2. Use $a = 1$ and $b = 0$ as starting values. Run the simulation from $t = 0$ to $t = 8000$ with time step $\delta t = 1$.
+
+3. For each time step, compute the gradients from equation 1.
+
+4. Update the population of $a$ and $b$ as
+
+$\Large a_{n} = a_{n-1} + \frac{\partial a}{\partial t} \delta t $
+
+$\Large b_{n} = b_{n-1} + \frac{\partial b}{\partial t} \delta t $
+
+5. Plot your results along with the analytical solution using the following parameters:
+
+| $\omega = \omega_{ba}$ | $V_{ab}$ |
+|:---:|:---:|
+| 1000 | 900 |
+| 1000 | 600 |
+| 1000 | 300 |
+| 2000 | 900 |
+| 2000 | 600 |
+| 2000 | 300 |
+| 3000 | 900 |
+| 3000 | 600 |
+| 3000 | 300 |
+
+
+
 

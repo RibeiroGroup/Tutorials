@@ -31,7 +31,7 @@ $\Large  i\hbar\sum_k \dot{c_k}e^{-i E_kt / \hbar}|k\rangle = \sum_k c_k e^{-i E
 
 Projecting $\frac{-i}{\hbar}\langle n | e^{iE_nt/\hbar}$ from the left side yields
 
-$\Large \dot{c}_n = -i \sum_k c_k e^{-i \omega_{kn}t} V_{nk}$
+$\Large \dot{c}_n = -\frac{i}{\hbar} \sum_k c_k e^{-i \omega_{kn}t} V_{nk}$
 
 where 
 
