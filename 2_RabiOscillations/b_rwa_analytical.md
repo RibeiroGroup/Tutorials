@@ -74,4 +74,4 @@ $\Large P(b) = |b|^2 = \frac{|V_{ab}|^2}{4\hbar^2 \Omega_R^2}\sin^2{\Omega_R t}$
 
 $\Large P(b) = |b|^2 = \frac{|V_{ab}|^2}{|V_{ab}|^2 + \hbar^2(\omega_{ba} - \omega)^2} \sin^2(\Omega_R t)$
 
-The frequency at which this probability oscillates ($\Omega_R$) is known as Rabi frequency.
+The frequency at which this probability oscillates ( $\Omega_R$ ) is known as Rabi frequency.
