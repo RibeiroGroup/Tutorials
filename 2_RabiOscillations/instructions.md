@@ -22,7 +22,7 @@ $\Large \dot{a} = -\frac{i}{\hbar} b e^{-i\omega_{ba}t} V_{ab}\cos(\omega t) \qq
 
 $\Large \dot{b} = -\frac{i}{\hbar} a e^{i\omega_{ba}t} V_{ab}\cos(\omega t) \qquad$ (1b)
 
-Using the complex exponential for for the cosine function, this can also be written as
+Using the complex exponential form of the cosine function, this can also be written as
 
 $\Large \dot{a} = -\frac{i}{2\hbar} b  V_{ab} (e^{-i(\omega_{ba}-\omega)t} + e^{-i(\omega_{ba}+\omega)t}) \qquad$ (2a)
 
