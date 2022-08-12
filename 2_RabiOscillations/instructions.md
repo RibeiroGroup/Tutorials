@@ -1,42 +1,35 @@
 # Transition in a two-level system driven by a time-dependent potential
 
-Consider a quantum system consisting of two energy levels $|a\rangle$ and $|b\rangle$ with energy gap $\hbar \omega_{ba} = E_b - E_a$. Initially, these energy levels correspond to eigenstates of an unperturbed Hamiltonian $\hat{H}_0$. These states are coupled upon the inclusion of a time dependent perturbation, $\hat{V}(t)$, with a coupling strength of
-
-$V_{ab}(t) = \langle a | \hat{V}(t) | b \rangle$
+Consider a quantum system consisting of two energy levels $\Large|a\rangle$ and $\Large|b\rangle$ with energy gap $\Large\hbar \omega_{ba} = E_b - E_a$. Initially, these energy levels correspond to eigenstates of an unperturbed Hamiltonian $\Large\hat{H_0}$. These states are coupled upon the inclusion of a time dependent perturbation,$\Large\hat{V}(t)$, with a coupling strength $\Large V_{ab}(t) = \langle a | \hat{V}(t) | b \rangle$
 
 ![img](assets/elevels.png)
 
 The wave function for this system can be written, generically as
-
-$\Large | \psi \rangle = a |a \rangle + b |b\rangle$
+$$\Large | \psi \rangle = a |a \rangle + b |b\rangle$$
 
 for which equations of motion can be derived (as shown in the [appendix A](a_eom.md))
-
-$\Large \dot{a} = -\frac{i}{\hbar} b e^{-i\omega_{ba}t} V_{ab}(t)$
-
-$\Large \dot{b} = -\frac{i}{\hbar} a e^{i\omega_{ba}t} V_{ab}(t)$
+$$\Large \dot{a} = -\frac{i}{\hbar} b e^{-i\omega_{ba}t} V_{ab}(t)$$
+$$\Large \dot{b} = -\frac{i}{\hbar} a e^{i\omega_{ba}t} V_{ab}(t)$$
 
 where we have assumed $V_{ab} = (V_{ba})^*$. If we take our time dependent perturbation to be $V_{ab}(t) = V_{ab}\cos(\omega t)$ these equations become
 
-$\Large \dot{a} = -\frac{i}{\hbar} b e^{-i\omega_{ba}t} V_{ab}\cos(\omega t) \qquad$ (1a)
+$$\Large \dot{a} = -\frac{i}{\hbar} b e^{-i\omega_{ba}t} V_{ab}\cos(\omega t) \qquad \normalsize \text{(1a)}$$
 
-$\Large \dot{b} = -\frac{i}{\hbar} a e^{i\omega_{ba}t} V_{ab}\cos(\omega t) \qquad$ (1b)
+$$\Large \dot{b} = -\frac{i}{\hbar} a e^{i\omega_{ba}t} V_{ab}\cos(\omega t) \qquad \normalsize \text{(1b)}$$
 
 Using the complex exponential form of the cosine function, this can also be written as
 
-$\Large \dot{a} = -\frac{i}{2\hbar} b  V_{ab} (e^{-i(\omega_{ba}-\omega)t} + e^{-i(\omega_{ba}+\omega)t}) \qquad$ (2a)
+$$\Large \dot{a} = -\frac{i}{2\hbar} b  V_{ab} (e^{-i(\omega_{ba}-\omega)t} + e^{-i(\omega_{ba}+\omega)t})  \normalsize \qquad (2a) $$
 
-$\Large \dot{b} = -\frac{i}{2\hbar} a V_{ab} (e^{i(\omega_{ba}-\omega)t} + e^{i(\omega_{ba}+\omega)t})\qquad$ (2b)
+$$\Large \dot{b} = -\frac{i}{2\hbar} a V_{ab} (e^{i(\omega_{ba}-\omega)t} + e^{i(\omega_{ba}+\omega)t}) \normalsize \qquad (2b) $$
 
 From this point, analytical expressions for $a$ and $b$ may be obtained invoking the rotating wave approximation (RWA), see [appendix B](b_rwa_analytical.md).
 
 Under this approximation, the probability of finding the molecule in the state $|b\rangle$ is
-
-$\Large P(b) = |b|^2 = \frac{|V_{ab}|^2}{|V_{ab}|^2 + \hbar^2(\omega_{ba} - \omega)^2} \sin^2(\Omega_R t)$
+$$\Large P(b) = |b|^2 = \frac{|V_{ab}|^2}{|V_{ab}|^2 + \hbar^2(\omega_{ba} - \omega)^2} \sin^2(\Omega_R t)$$
 
 where the Rabi frequency $(\large \Omega_R)$ is
-
-$\Large \Omega_R = \frac{1}{2\hbar}\sqrt{|V_{ab}|^2 + \hbar^2(\omega_{ba} - \omega)^2}$
+$$\Large \Omega_R = \frac{1}{2\hbar}\sqrt{|V_{ab}|^2 + \hbar^2(\omega_{ba} - \omega)^2}$$
 
 
 # Task 1: Plot Rabi Oscillations
@@ -120,10 +113,8 @@ Using this function prepare and save a figure with the following parameters:
 3. For each time step, compute the gradients from equation 1.
 
 4. Update the population of $a$ and $b$ as
-
-$\Large a_{n} = a_{n-1} + \frac{\partial a}{\partial t} \delta t $
-
-$\Large b_{n} = b_{n-1} + \frac{\partial b}{\partial t} \delta t $
+$$\Large a_{n} = a_{n-1} + \frac{\partial a}{\partial t} \delta t $$
+$$\Large b_{n} = b_{n-1} + \frac{\partial b}{\partial t} \delta t $$
 
 5. Plot your results along with the analytical solution using the following parameters:
 
