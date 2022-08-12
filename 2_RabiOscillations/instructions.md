@@ -34,7 +34,7 @@ Under this approximation, the probability of finding the molecule in the state $
 
 $\Large P(b) = |b|^2 = \frac{|V_{ab}|^2}{|V_{ab}|^2 + \hbar^2(\omega_{ba} - \omega)^2} \sin^2(\Omega_R t)$
 
-where the Rabi frequency ($\Omega_R$) is
+where the Rabi frequency $(\large \Omega_R)$ is
 
 $\Large \Omega_R = \frac{1}{2\hbar}\sqrt{|V_{ab}|^2 + \hbar^2(\omega_{ba} - \omega)^2}$
 
@@ -73,7 +73,7 @@ end
 1. Create another function, `solutionB`, that takes in a range of $\omega$ values, a $\omega_{ba}$ value and an array of $V_{ab}$ values. For each value of $V_{ab}$ you must
 
 2. Compute the probability profile $P(b)$  across the range of $\omega$ values. (Note that this implies a double loop!).
-3. Determine the maximum probability of finding the state in the energy level $|b\rangle$ ($P_\text{max}$) for each value of $\omega$.
+3. Determine the maximum probability of finding the state in the energy level $|b\rangle$ $(P_\text{max})$ for each value of $\omega$.
 4. Plot $P_\text{max}$ against $\omega$.
 
 A template for this function is shown below
