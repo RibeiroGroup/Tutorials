@@ -9,7 +9,7 @@ The coordinate system of the problem is illustrated in the figure below
 <img src="assets/oscillator.png" alt="drawing" width="400"/>
 </p>
 
-The mechanical oscillator is constrained to move harmonically along the $y$ direction. Its rest position is set at the origin ($x = 0$, $y = 0$). Before the electric field is turned on, the equation of motion for the system is the well-known harmonic oscillator differential equation (Newton's 2nd law for motion of a point particle near equilibrium)
+The mechanical oscillator is constrained to move harmonically along the $y$ direction. Its rest position is set at the origin $(x = 0$, $y = 0)$. Before the electric field is turned on, the equation of motion for the system is the well-known harmonic oscillator differential equation (Newton's 2nd law for motion of a point particle near equilibrium)
 
 $\Large m \frac{\partial^2 y}{\partial t^2} = - k y = - m \omega^2 y$ 
 
@@ -37,7 +37,7 @@ The general expansion of a function $f$ in power series around $a$ is
 
 $\Large f(x) = f(a) + f'(a)(x-a) + \frac{1}{2}f''(a)(x-a)^2 + \frac{1}{6}f'''(a)(x-a)^3 + \mathcal{O}[(x-a)^4] \qquad$    (1)
 
-From this equation, we can see that information about the function at some region $x$ can be obtained using information of the function at some point $a$. Using a Taylor series expansion will allow us to determine the position of the particle at some time step  ($t_{n+1} = x$) using only information of the previous time step $t_n = a$. Substituting these definition into the Taylor series (and replacing $f$ with $y$), we get
+From this equation, we can see that information about the function at some region $x$ can be obtained using information of the function at some point $a$. Using a Taylor series expansion will allow us to determine the position of the particle at some time step  $(t_{n+1} = x)$ using only information of the previous time step $t_n = a$. Substituting these definition into the Taylor series (and replacing $f$ with $y$), we get
 
 $\Large y(t_{n+1}) = y(t_n) + \dot{y}(t_n)(t_{n+1}-t_n) + \frac{1}{2}\ddot{y}(t_n)(t_{n+1}-t_n)^2 + \frac{1}{6}\dot{}\ddot{y}(t_n)(t_{n+1}-t_n)^3 + \mathcal{O}[(t_{n+1}-t_n)^4] $
 
@@ -49,7 +49,7 @@ Alternatively, we could inquire the position of the particle at previous time st
 
 $\Large y(t_{n-1}) = y(t_n) + \dot{y}(t_n)(t_{n-1}-t_n) + \frac{1}{2}\ddot{y}(t_n)(t_{n-1}-t_n)^2 + \frac{1}{6}\dot{}\ddot{y}(t_n)(t_{n-1}-t_n)^3 + \mathcal{O}[(t_{n-1}-t_n)^4] $
 
-Enforcing time intervals to be fixed ($t_{n-1}-t_n = -\Delta t$), we can write
+Enforcing time intervals to be fixed $(t_{n-1}-t_n = -\Delta t)$, we can write
 
 $\Large y(t_{n-1}) = y(t_n) - \dot{y}(t_n)\Delta t+ \frac{1}{2}\ddot{y}(t_n)\Delta t^2 - \frac{1}{6}\dot{}\ddot{y}(t_n)\Delta t^3 + \mathcal{O}(\Delta t^4) \qquad$ (3)
 
@@ -79,17 +79,8 @@ Thus,
 
 $\Large v_n = \dot{y_n} \approx \frac{y_{n+1} - y_{n-1}}{2 \Delta t} \qquad$ (6)
 
-## Procedure
-
-- Run a simulation for 15 units of time with 5000 time steps.
-
-- Turn the electric wave on at $t = 5.0$ and turn it off at $t = 10.0$. 
-
-- Use $y_0 = 2.0$ and $y_1 = 2.0$ and $v_0 = 0.0$ 
-
-- Use $E_0 = 20.0$ and $\omega = 5.0$.
-
-For each time step your simulation must
+## Instructions
+Run a simulation for 15 units of time with 5000 time steps. The electric wave must be turned on at $t = 5.0$ and off at $t = 10.0$. For each time step your simulation must
 
 1. Compute the force. Note that the electric force must only be include within the time interval given above.
 
@@ -97,7 +88,21 @@ For each time step your simulation must
 
 3. Compute total energy.
 
-- Plot position over time for different detuning values: 0.5, 0.8, 1.0, 1.2, 1.5
+The following parameters may be used for all computations:
 
-- Plot energy transferred (energy before minus energy after the electric pulse) as a function of detuning values (0.4 - 1.6 with steps of 0.01).
+- $y_0 = 2.0$ and $y_1 = 2.0$ and $v_0 = 0.0$ 
+
+- $E_0 = 20.0$ and $\omega = 5.0$.
+
+### Task 1:
+
+Plot position over time for different detuning values: 0.5, 0.8, 1.0, 1.2, 1.5
+
+> Feel free to also plot the electric field intensity in the same pociture!
+
+### Task 2:
+
+Plot energy transferred (energy before the electrict pulse minus energy after the electric pulse) as a function of detuning values (0.4 - 1.6 with steps of 0.01).
+
+> For less noisy results, you can average the energy before and after the electric pulse and take their difference as the energy absorded. 
 
