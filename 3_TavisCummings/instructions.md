@@ -7,6 +7,7 @@
 3. [Quantum formalism for light](#quantum-formalism-for-light)
 4. [Light-matter interaction](#light-matter-interaction)
 5. [Tavis-Cummings model](#tavis-cummings-model)
+6. [Task 1](#task-1)
 
 ## Motivation
 
@@ -222,7 +223,7 @@ $$
 
 At this point, one can diagonalize this matrix to obtain the energy levels of the system. However, the highly regular structure of the Hamiltonian matrix allows for a change of basis that simplifies the problem further. If we define a bright state as the symmetric combination of all molecular excitations
 
-$$ |B\rangle = \frac{1}{\sqrt{N}}(|0,a\rangle + |0,b\rangle + |0,c\rangle + |0,d\rangle + ... )$$
+$$\Large |B\rangle = \frac{1}{\sqrt{N}}(|0,a\rangle + |0,b\rangle + |0,c\rangle + |0,d\rangle + ... )$$
 
 we can also find $N-1$ dark states ($|D_\mu\rangle$) forming a new symmetry-adapted basis. In this basis, the Hamiltonian matrix becomes
 
@@ -241,12 +242,47 @@ $$
 
 with this new basis, only the bright state couples with light. Therefore, our problem becomes a simple $2\times2$ diagonalization for which solutions are analytical. The two energy levels arising from this interaction are labeled upper polariton $|\text{UP}\rangle$ and lower polariton $|\text{LP}\rangle$ for which energies are
 
-$$E_\text{LP} = \frac{\hbar \omega_c + \hbar \omega_M}{2} - \frac{1}{2}\sqrt{\Omega_R^2 + (\omega_c - \omega_M)^2}$$
-$$E_\text{UP} = \frac{\hbar \omega_c + \hbar \omega_M}{2} + \frac{1}{2}\sqrt{\Omega_R^2 + (\omega_c - \omega_M)^2}$$
+$$\Large E_\text{LP} = \frac{\hbar \omega_c + \hbar \omega_M}{2} - \frac{1}{2}\sqrt{\Omega_R^2 + (\omega_c - \omega_M)^2} \qquad \normalsize (5a)$$
+$$\Large E_\text{UP} = \frac{\hbar \omega_c + \hbar \omega_M}{2} + \frac{1}{2}\sqrt{\Omega_R^2 + (\omega_c - \omega_M)^2} \qquad \normalsize (5b)$$
 
 where the Rabi splitting $(\Omega_R)$ is defined as
 
-$$ \Omega_R = 2\sqrt{N}g
+$$\Large \Omega_R = 2\sqrt{N}g$$
+
+
+## Task 1
+
+> Goal: Explicitly build the Hamiltonian matrix and compare its eigenvalues with the analytical result from the Tavis-Cumming model
+
+Write a function to construct a Hamiltonian matrix for an arbitrary number of molecules and cavity frequency. For example:
+
+```julia
+function build_H(N, ωc)
+
+    # Return (N+1)x(N+1) Hamiltonian matrix
+
+end
+```
+
+You can use the following parameters as default:
+
+- $\omega_M = 1000$ $\text{cm}^{-1}$
+- $g = 2$ $\text{cm}^{-1}$
+
+Next, prepare plot the energy splitting as a function of the number of molecules $N$. For every value of $N$ you will need to
+
+1. Build your Hamiltonian using the function you created earlier.
+2. Diagonalize the matrix to get your eigenvalues.
+3. Analyze your eigenvalues to figure out what is the energy splitting due to light-matter coupling.
+
+You should go at lest up to $N=1000$. To reduce the cost of this step, you can use steps of 20 or 50 and use a scatter plot. Also plot, in the same picture, the expected splitting from the analytical results (equation 5).
+
+## Task 2
+
+
+
+
+
 
 
 
