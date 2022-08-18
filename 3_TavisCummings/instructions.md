@@ -8,6 +8,7 @@
 4. [Light-matter interaction](#light-matter-interaction)
 5. [Tavis-Cummings model](#tavis-cummings-model)
 6. [Task 1](#task-1)
+7. [Task 2](#task-2)
 
 ## Motivation
 
@@ -279,6 +280,13 @@ You should go at lest up to $N=1000$. To reduce the cost of this step, you can u
 
 ## Task 2
 
+> Goal: study how the energy of the polaritons change with detuning and compare it to the non-interacting limit.
+
+In this task, you will use a fixed number of molecules ($N = 100$) and compute the polariton energies as a function of the detuning, defined as
+
+$$ \delta = \omega_M - \omega_c$$
+
+Take values of $\delta$ in the range of -100 to 100 $\text{cm}^{-1}$ and plot the upper and lower polariton energies. Moreover, for reference, plot the non-interacting limit as two straight lines representing the energy of a single molecule and a single photon. For contrast, use difference styles for the polariton curves and the non-interacting lines. 
 
 
 
