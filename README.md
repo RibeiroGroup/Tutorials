@@ -17,3 +17,6 @@
 
 ### Semi-classical
 2. [Transition in a two-level system driven by a time-dependent potential](2_RabiOscillations/instructions.md)
+
+### Fully quantum
+3. [Strong light-matter interactions](3_TavisCummings/instructions.md)
