@@ -65,20 +65,19 @@ $$\Large \hat{H}_M = \sum_i \hbar \omega_i \hat{\sigma}^+_i \hat{\sigma}^-_i $$
 
 ## Quantum formalism for light
 
-Upon quantization, the Hamiltonian for electromagnetic field resembles that of a Harmonic oscillator
+Upon quantization, the Hamiltonian for electromagnetic field resembles that of a harmonic oscillator
 
 $$\Large \hat{H}_L = \sum_k \hbar \omega_k\hat{a}_k^\dagger\hat{a}_k$$
 
-where the divergent zero-point energy component has been conveniently removed as it does not play a role in the problem we are interested and $a_k$ and $a^\dagger$ represent annihilation and creation operators for Bosons, respectively. 
-
-The eigenstates of the Hamiltonian above are the Fock states represented generically as
+where the divergent zero-point energy component has been conveniently removed as it does not play a role in the problem we are interested. The operators $a_k$ and $a^\dagger$ are annihilation and creation operators for Bosons, respectively. The eigenstates of the Hamiltonian above are the Fock (or number) states represented generically as
 
 $$\Large |n_1 n_2 n_3 ... n_k \rangle $$
 
 where each $n_i$ represents the number of photons in the $i$-th radiation mode. The action of the second quantized operators onto this state is
 
-$$\hat{a}_i |n_1 n_2\;...\; n_i \;...\; n_k \rangle = \sqrt{n_k} |n_1 n_2 \;...\; (n_i-1) \;...\; n_k \rangle $$
-$$\hat{a}_i^\dagger |n_1 n_2\;...\; n_i \;...\; n_k \rangle = \sqrt{n_k+1} |n_1 n_2 \;...\; (n_i+1) \;...\; n_k \rangle $$
+$$\Large \hat{a}_i |n_1 n_2\ ...\  n_i \ ...\  n_k \rangle = \sqrt{n_k} |n_1 n_2 \ ...\  (n_i-1) \ ...\  n_k \rangle $$
+
+$$\Large \hat{a}_i^\dagger |n_1 n_2\ ...\  n_i \ ...\  n_k \rangle = \sqrt{n_k+1} |n_1 n_2 \ ...\  (n_i+1) \ ...\  n_k \rangle $$
 
 Note that, the annihilation operator will destroy the system (return zero) if no photons occupy the mode being operated. However, unlike the case for Fermions, the creation operator will not destroy the system regardless of the population of the mode.
 
@@ -86,10 +85,13 @@ Note that, the annihilation operator will destroy the system (return zero) if no
 
 The number operator $\hat{N} =\hat{a}_i^\dagger\hat{a}_i$ is an useful shortcut that probes the population of a given mode
 
-$$\Large \hat{N}_i|n_1 n_2\;...\; n_i \;...\; n_k \rangle=\hat{a}_i^\dagger\hat{a}_i |n_1 n_2\;...\; n_i \;...\; n_k \rangle$$
-$$= \Large\hat{a}_i^\dagger \sqrt{n_i} |n_1 n_2\;...\; (n_i-1) \;...\; n_k \rangle$$
-$$= \Large \sqrt{n_i-1+1}\sqrt{n_i} |n_1 n_2\;...\; (n_i-1+1) \;...\; n_k \rangle$$
-$$= \Large n_i |n_1 n_2\;...\; n_i \;...\; n_k \rangle$$
+$$\Large \hat{N}_i|n_1 n_2\ ...\  n_i \ ...\  n_k \rangle=\hat{a}_i^\dagger\hat{a}_i |n_1 n_2\ ...\  n_i \ ...\  n_k \rangle$$
+
+$$= \Large\hat{a}_i^\dagger \sqrt{n_i} |n_1 n_2\ ...\  (n_i-1) \ ...\  n_k \rangle$$
+
+$$= \Large \sqrt{n_i-1+1}\sqrt{n_i} |n_1 n_2\ ...\  (n_i-1+1) \ ...\  n_k \rangle$$
+
+$$= \Large n_i |n_1 n_2\ ...\  n_i \ ...\  n_k \rangle$$
 
 This operator makes the interpretation of the radiation Hamiltonian straightforward: each mode $k$ contributes to the total energy as $n\hbar \omega_k$, where $n$ is the number of photons in that mode.
 
@@ -178,7 +180,7 @@ $$\Large \hat{H} = \sum_j \hbar \omega_M \hat{\sigma}^+_j \hat{\sigma}^-_j + \hb
 
 From this point, we can obtain the energy eigenstates of the system following the traditional recipe from matrix mechanics: construct the Hamiltonian matrix using some basis followed by a diagonalization procedure. The choice of basis should not be arbitrary, one must use the adequate basis for the particular problem to be solved and consider the struct of the Hamiltonian. For example, consider the somewhat naive basis set:
 
-$$\{|n,m\rangle\} = |0,0\rangle \; |1,0\rangle \; |0,a\rangle \; |0,b\rangle \; |2,0\rangle \; |1,a\rangle \; |1,b\rangle$$
+$$\{|n,m\rangle\} = |0,0\rangle \  |1,0\rangle \  |0,a\rangle \  |0,b\rangle \  |2,0\rangle \  |1,a\rangle \  |1,b\rangle$$
 
 where $n$ represent the number of photons and $m$ indicates which molecule is excited (in this example, $a$ or $b$, with zero representing no molecular excitations). The Hamiltonian built from this basis takes the following structure
 
