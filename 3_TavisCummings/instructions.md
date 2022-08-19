@@ -12,11 +12,7 @@
 
 ## Motivation
 
-Consider a system where the interaction between light and matter becomes significantly strong. One way to achieve the strong coupling regime is confining the electromagnetic field in a small space. This can be understood looking at the light-matter interaction component of the Hamiltonian where the electromagnetic field has been quantized
-
-$$\Large \hat{H}_{LM} \leftarrow \sqrt{\frac{\hbar \omega}{2\epsilon_0 V}} \mu_M$$ 
-
-The intensity of the interaction between a radiation field with frequency $\omega$ and a molecule with transition dipole moment magnitude of $\mu_M$ increases as the quantization volume $V$ is decreased. Experimentally, this condition has been achieved within microcavities, where light is trapped between two high-quality mirror enhancing its interaction with molecules inside it. Moreover, due to boundary conditions, the length of the cavity (distance between the two mirrors) dictates which radiation modes can be supported inside it.
+Consider a system where the interaction between light and matter becomes significantly strong. One way to achieve this is by confining the electromagnetic field in a small space. As we will see in following sections, this can be understood recognizing the dependence of the coupling constant (relating a molecule and the quantized radiation) on the quantization volume. Experimentally, this condition has been achieved within microcavities, where light is trapped between two high-quality mirror enhancing its interaction with molecules inside it. Moreover, due to boundary conditions, the length of the cavity (distance between the two mirrors) dictates which radiation modes can be supported inside it.
 
 <p align="center">
 <img src="mirror.png" alt="drawing" width="300"/>
@@ -26,41 +22,44 @@ In this tutorial, we will build an idealized Hamiltonian that can be used to mod
 
 ## Quantum formalism for matter
 
-At this point, we are used to quantum states of matter. For example, if we have a two-level system representing our atom and molecule $|g \rangle$ and $|e \rangle$, the time-independent Schrödinger gives us the energy of each state
+At this point, we are used to quantum states of matter. For example, if we have a two-level system representing our molecule (or atom) $|g \rangle$ and $|e \rangle$, the time-independent Schrödinger gives us the energy of each state
 
-$$\Large \hat{H}_M |g\rangle = E_g |g \rangle = \hbar \omega_g |g \rangle \normalsize \qquad \text{(1a)}$$ 
+$$\Large \hat{H}_M |g\rangle = E_g |g \rangle = \hbar \omega_g |g \rangle \normalsize \qquad \text{(1a)}$$
+
 $$\Large \hat{H}_M |e\rangle = E_e |e \rangle = \hbar \omega_e |e \rangle \normalsize \qquad \text{(1b)}$$ 
 
-Given that we know the eigenstates of our molecular system and we are assuming it forms a complete basis (i.e. any arbitrary molecular state can be written as a combination of $|g\rangle$ and $|e\rangle$) we can express our Hamiltonian in this basis. Recall that the identity operator can be expressed as the resolution of the identity
+Given that we know the eigenstates of our molecular system and we are assuming it forms a complete basis (i.e. any arbitrary molecular state can be written as a combination of $|g\rangle$ and $|e\rangle$) we can construct our Hamiltonian in this basis. Recall that the identity operator can be expressed as the resolution of the identity
 
-$$\Large 1\!\!1 = \sum_k |k\rangle \langle k | $$
+$$\Large \mathbb{1} = \sum_k |k\rangle \langle k | $$
 
 where $k$ are the basis that form the complete Hilbert space we are interested. In our case, the molecular basis contains only two basis. Thus,
 
-$$\Large \hat{H}_M =  1\!\!1 \hat{H}_M  1\!\!1 = (|g\rangle \langle g | + |e\rangle \langle e | ) \hat{H}_M  (|g\rangle \langle g | + |e\rangle \langle e | ) $$
+$$\Large \hat{H}_M =  \mathbb{1} \hat{H}_M  \mathbb{1} = (|g\rangle \langle g | + |e\rangle \langle e | ) \hat{H}_M  (|g\rangle \langle g | + |e\rangle \langle e | ) $$
 
-Using equation 1 and the fact the $|g\rangle$ and $|e\rangle$ are orthonormal, we get
+Using equation 1 and the fact the $|g\rangle$ and $|e\rangle$ are orthonormal to each other, we get
 
 $$\Large \hat{H}_M = \hbar \omega_g |g\rangle \langle g |+ \hbar\omega_e |e\rangle \langle e | $$
 
-For our purposes, only the energy difference between the states is important, thus we can choose the set the energy of the ground state to zero yielding the very simple Hamiltonian:
+For our purposes, only the energy difference between the states is important, thus we can choose the set the energy of the ground state to zero yielding the very simple matter Hamiltonian:
 
 $$\Large \hat{H}_M = \hbar\omega_M |e\rangle \langle e | $$
 
-where we switched the subscript to $M$ to indicate that this energy correspond to the excitation energy of the system. Note that, this form of the Hamiltonian bypass the need of defining complicated molecular details, but it requires the *a priori* knowledge of the energy levels of the system. 
+where we switched the subscript to $M$ to indicate that this corresponds to the excitation energy of the system. Note that, this form of the Hamiltonian bypass the need of defining complicated molecular details, but it requires the *a priori* knowledge of the energy levels of the system. 
 
 We can also define ladder operators in this basis
 
 $$\Large \hat{\sigma}^+ = |e\rangle \langle g |$$
+
 $$\Large \hat{\sigma}^- = |g\rangle \langle e |$$
 such that
 
 $$\Large \hat{\sigma}^+ |g \rangle = |e\rangle \qquad \hat{\sigma}^+ |e \rangle = 0$$
+
 $$\Large \hat{\sigma}^- |g \rangle = 0 \qquad \hat{\sigma}^- |e \rangle = |g \rangle$$
 Therefore, an alternative Hamiltonian could also be written as 
 $$\Large \hat{H}_M = \hbar\omega_M \hat{\sigma}^+ \hat{\sigma}^- $$
 
-For a system of $N$ non-interacting molecules, this formalism extends itself easily since the total Hamiltonian is just a sum of individual molecules components
+For a system of $N$ non-interacting molecules, this formalism extends itself easily since the total Hamiltonian is just a sum of individual molecule operators
 
 $$\Large \hat{H}_M = \sum_i \hbar \omega_i \hat{\sigma}^+_i \hat{\sigma}^-_i $$
 
