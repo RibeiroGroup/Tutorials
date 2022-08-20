@@ -173,16 +173,16 @@ The Tavis-Cummings model is an idealized method where $N$ molecules interact wit
 
 - The molecules do not interact among themselves.
 - The interaction between the radiation and the molecules follows the Hamiltonian described in the previous section. 
-- All molecules have the same coupling strength with the radiation mode ($g$).
-- All molecules are described by a two-level system with uniform excitation energy ($\hbar \omega_M$).
+- All molecules have the same coupling strength with the radiation mode $(g)$.
+- All molecules are described by a two-level system with uniform excitation energy $(\hbar \omega_M)$.
 
-Under this model, the total Hamiltonian is
+The total Hamiltonian is then
 
 $$\Large \hat{H} = \sum_j \hbar \omega_M \hat{\sigma}^+_j \hat{\sigma}^-_j + \hbar \omega_c \hat{a}^\dagger\hat{a} - i \sum_j g (\hat{a}\hat{\sigma}_j^+   - \hat{a}^\dagger\hat{\sigma}_j^- )$$
 
-From this point, we can obtain the energy eigenstates of the system following the traditional recipe from matrix mechanics: construct the Hamiltonian matrix using some basis followed by a diagonalization procedure. The choice of basis should not be arbitrary, one must use the adequate basis for the particular problem to be solved and consider the struct of the Hamiltonian. For example, consider the somewhat naive basis set:
+From this point, we can obtain the energy eigenstates of the system following the traditional recipe from matrix mechanics: construct the Hamiltonian matrix using some basis followed by a diagonalization procedure. The choice of basis should not be arbitrary, one must use the adequate basis for the particular problem to be solved and considering structure of the Hamiltonian. For example, consider the somewhat naive basis set:
 
-$$\{|n,m\rangle\} = |0,0\rangle \  |1,0\rangle \  |0,a\rangle \  |0,b\rangle \  |2,0\rangle \  |1,a\rangle \  |1,b\rangle$$
+$$\Large \{|n,m\rangle\} = |0,0\rangle \  |1,0\rangle \  |0,a\rangle \  |0,b\rangle \  |2,0\rangle \  |1,a\rangle \  |1,b\rangle$$
 
 where $n$ represent the number of photons and $m$ indicates which molecule is excited (in this example, $a$ or $b$, with zero representing no molecular excitations). The Hamiltonian built from this basis takes the following structure
 
@@ -202,15 +202,16 @@ $$
 \end{array}
 \right]
 $$
+
 Note that this Hamiltonian has a block diagonal structure, with each block being associated with a specific number of photons:
 
-$$\mathbf{H} = \mathbf{H}_{n=0} \oplus \mathbf{H}_{n=1} \oplus \mathbf{H}_{n=2}$$
+$$\Large \mathbf{H} = \mathbf{H}\_{n=0} \oplus \mathbf{H}\_{n=1} \oplus \mathbf{H}\_{n=2}$$
 
 In practice, this means we only need to consider basis states with the relevant number of photons we want to study. In our case, we will concentrate on the case where there is only one photon up for absorption. Thus
 
-$$\{|n,m\rangle\} = \; |1,0\rangle \; |0,a\rangle \; |0,b\rangle \; |0,c\rangle \; |0,d\rangle \; ... $$ 
+$$\Large \{|n,m\rangle\} = \ |1,0\rangle \ |0,a\rangle \ |0,b\rangle \ |0,c\rangle \ |0,d\rangle \ ... $$ 
 
-In this model, a system with $N$ molecules results in a $(N+1)\times (N+1)$ Hamiltonian matrix. As a convention, we shall use our first basis element as the one where the photon is free and no molecule is excited. Our single photon Hamiltonian matrix is
+Therefore, a system with $N$ molecules results in a $(N+1)\times (N+1)$ Hamiltonian matrix. As a convention, we shall use our first basis element as the one where the photon is free and no molecule is excited. Our single photon Hamiltonian matrix is
 
 $$\mathbf{H} = 
 \left[
@@ -229,7 +230,7 @@ At this point, one can diagonalize this matrix to obtain the energy levels of th
 
 $$\Large |B\rangle = \frac{1}{\sqrt{N}}(|0,a\rangle + |0,b\rangle + |0,c\rangle + |0,d\rangle + ... )$$
 
-we can also find $N-1$ dark states ($|D_\mu\rangle$) forming a new symmetry-adapted basis. In this basis, the Hamiltonian matrix becomes
+we can also find $N-1$ dark states $(|D_\mu\rangle)$ forming a new symmetry-adapted basis. In this basis, the Hamiltonian matrix becomes
 
 $$\mathbf{H} = 
 \left[
@@ -247,6 +248,7 @@ $$
 with this new basis, only the bright state couples with light. Therefore, our problem becomes a simple $2\times2$ diagonalization for which solutions are analytical. The two energy levels arising from this interaction are labeled upper polariton $|\text{UP}\rangle$ and lower polariton $|\text{LP}\rangle$ for which energies are
 
 $$\Large E_\text{LP} = \frac{\hbar \omega_c + \hbar \omega_M}{2} - \frac{1}{2}\sqrt{\Omega_R^2 + (\omega_c - \omega_M)^2} \qquad \normalsize (5a)$$
+
 $$\Large E_\text{UP} = \frac{\hbar \omega_c + \hbar \omega_M}{2} + \frac{1}{2}\sqrt{\Omega_R^2 + (\omega_c - \omega_M)^2} \qquad \normalsize (5b)$$
 
 where the Rabi splitting $(\Omega_R)$ is defined as
@@ -273,27 +275,20 @@ You can use the following parameters as default:
 - $\omega_M = 1000$ $\text{cm}^{-1}$
 - $g = 2$ $\text{cm}^{-1}$
 
-Next, prepare plot the energy splitting as a function of the number of molecules $N$. For every value of $N$ you will need to
+Next, prepare a plot of the energy splitting as a function of the number of molecules $N$. For every value of $N$ you will need to
 
 1. Build your Hamiltonian using the function you created earlier.
 2. Diagonalize the matrix to get your eigenvalues.
 3. Analyze your eigenvalues to figure out what is the energy splitting due to light-matter coupling.
 
-You should go at lest up to $N=1000$. To reduce the cost of this step, you can use steps of 20 or 50 and use a scatter plot. Also plot, in the same picture, the expected splitting from the analytical results (equation 5).
+You should go up to at lest $N=1000$. To reduce the cost, you can use steps of 20 or 50 for $N$ to produce a scatter plot. Also plot, in the same picture, the expected splitting from the analytical results (equation 5).
 
 ## Task 2
 
 > Goal: study how the energy of the polaritons change with detuning and compare it to the non-interacting limit.
 
-In this task, you will use a fixed number of molecules ($N = 100$) and compute the polariton energies as a function of the detuning, defined as
+In this task, you will use a fixed number of molecules $(N = 100)$ and compute the polariton energies as a function of the detuning, defined as
 
-$$ \delta = \omega_M - \omega_c$$
+$$\Large \delta = \omega_M - \omega_c$$
 
 Take values of $\delta$ in the range of -100 to 100 $\text{cm}^{-1}$ and plot the upper and lower polariton energies. Moreover, for reference, plot the non-interacting limit as two straight lines representing the energy of a single molecule and a single photon. For contrast, use difference styles for the polariton curves and the non-interacting lines. 
-
-
-
-
-
-
-
