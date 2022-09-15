@@ -21,4 +21,4 @@
 
 
 # Topological Matter
-1. [Hofstadter Butterfly](1.-HofstadterButterfly/Instructions.md)
+1. [Hofstadter Butterfly](1_HofstadterButterfly/Instructions.md)
