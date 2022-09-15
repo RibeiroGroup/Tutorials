@@ -5,5 +5,6 @@ In this problem, you are asked to work out some properties of the spectrum of an
 
 ## 2D Lattice coupled to an external perpendicular magnetic field
 
-Consider a 2D square lattice with lattice parameter $a$, with the following Tight-Binding Hamiltonian
-$$ \hat{H} =  \sum_{\boldsymbol{r},\boldsymbol{r}'}t_{\boldysmbol{r},\boldsymbol{r}'}e^{-i \frac{e}{\hbar}\alpha(\boldsymbol{r},\boldsymbol{r}')}\psi^\dagger(\boldsymbol{r})\psi(\boldysmbol{r}') $$
+Consider a 2D square lattice with lattice parameter $a$, with the following Hamiltonian
+$$\hat{H} =  \sum_{\boldsymbol{r},\boldsymbol{r}'}t_{r,r'}e^{-i \frac{e}{\hbar}\alpha(\boldsymbol{r},\boldsymbol{r}')}\psi^\dagger(\boldsymbol{r})\psi(\boldsymbol{r}') + \text{h.c.},$$
+where $\boldsymbol{r}=a(m,n)$ (being $m,n$ integers) is the position vector in the 2D crystal, and $t_{\boldsymbol{r},\boldsymbol{r}'}=-t$ is the real hopping parameter between closest neighbors.
