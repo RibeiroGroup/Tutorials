@@ -18,3 +18,7 @@
 
 ## Fully quantum
 3. [Strong light-matter interactions](3_TavisCummings/instructions.md)
+
+
+# Topological Matter
+1. [Hofstadter Butterfly](1_HofstadterButterfly/Instructions.md)
