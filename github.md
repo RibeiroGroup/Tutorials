@@ -82,6 +82,7 @@ You should see a key printed on your terminal. It looks like this
 ssh-ed25519 AAAACNjkjfnJFJKNfndflkFKJKnd/m/nisdasnknk youremail@somewhere.com
 ```
 Copy that information making sure no trailing whitespaces or newlines are included. 
+
 3. Go to your GitHub Settings. You can find that by clicking on your profile picture at the top right side of the screen, `Settings` must be the second-to-last option on the list that pops up.
 
 4. Go to `SSH and GPG keys`. This option is found in the `Access` tab on the left side of the screen.
