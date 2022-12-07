@@ -4,7 +4,7 @@
 
 GitHub is a hosting platform for software development and version control (*via* git). 
 
-For us, GitHub serves as place where all useful code is stored. Well, why not just use Google Drive or the likes? GitHub provides us with version control (git), with allow us to keep track of modifications made to any code over time. Moreover, it let us to collaborate on the same project helping us, for example, dealing with conflicts arising from a common file being modified by two people. 
+For us, GitHub serves as place where all useful code is stored. Well, why not just use Google Drive or the likes? GitHub provides us with version control (git), which allow us to keep track of modifications made to any code over time. Moreover, it let us to collaborate on the same project helping us, for example, dealing with conflicts arising from a common file being modified by two people. 
 
 The best way to learn git is working with git, but I am try to give you some useful tips to get started. 
 
