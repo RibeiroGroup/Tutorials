@@ -4,7 +4,7 @@
 
 GitHub is a hosting platform for software development and version control (*via* git). 
 
-For us, GitHub serves as place where all useful code is stored. Well, why not just use Google Drive or the likes? GitHub provides us with version control (git), with allow us to keep track of modifications made to any code over time. Moreover, it let us to collaborate on the same project helping us, for example, dealing with conflicts arising from a common file being modified by two people. 
+For us, GitHub serves as place where all useful code is stored. Well, why not just use Google Drive or the likes? GitHub provides us with version control (git), which allow us to keep track of modifications made to any code over time. Moreover, it let us to collaborate on the same project helping us, for example, dealing with conflicts arising from a common file being modified by two people. 
 
 The best way to learn git is working with git, but I am try to give you some useful tips to get started. 
 
@@ -82,6 +82,7 @@ You should see a key printed on your terminal. It looks like this
 ssh-ed25519 AAAACNjkjfnJFJKNfndflkFKJKnd/m/nisdasnknk youremail@somewhere.com
 ```
 Copy that information making sure no trailing whitespaces or newlines are included. 
+
 3. Go to your GitHub Settings. You can find that by clicking on your profile picture at the top right side of the screen, `Settings` must be the second-to-last option on the list that pops up.
 
 4. Go to `SSH and GPG keys`. This option is found in the `Access` tab on the left side of the screen.

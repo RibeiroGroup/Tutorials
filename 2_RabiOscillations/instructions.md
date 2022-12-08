@@ -1,6 +1,6 @@
 # Transition in a two-level system driven by a time-dependent potential
 
-Consider a quantum system consisting of two energy levels $\Large|a\rangle$ and $\Large|b\rangle$ with energy gap $\Large\hbar \omega_{ba} = E_b - E_a$. Initially, these energy levels correspond to eigenstates of an unperturbed Hamiltonian $\Large\hat{H_0}$. These states are coupled upon the inclusion of a time dependent perturbation,$\Large\hat{V}(t)$, with a coupling strength $\Large V_{ab}(t) = \langle a | \hat{V}(t) | b \rangle$
+Consider a quantum system consisting of two energy levels $\Large|a\rangle$ and $\Large|b\rangle$ with energy gap $\Large\hbar \omega_{ba} = E_b - E_a$. Initially, these energy levels correspond to eigenstates of an unperturbed Hamiltonian $\Large\hat{H_0}$. These states are coupled upon the inclusion of a time dependent perturbation, $\Large\hat{V}(t)$, with a coupling strength $\Large V_{ab}(t) = \langle a | \hat{V}(t) | b \rangle$
 
 ![img](assets/elevels.png)
 
