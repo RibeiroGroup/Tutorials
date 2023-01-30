@@ -86,11 +86,11 @@ function energy_transferred(δvals; ω = 5.0, y0 = 2.0, N = 5000, duration = 15.
         t, _, E = simulate(δvals[i], ω, y0, N, duration, E0, ton, toff)
 
         # Number of time points before electrict field is turned on
-        Nbefore = count(x -> x < ton, t)
+        Nbefore = count(x -> x < ton, t) + 1
         Ebefore = sum(E[1:Nbefore]) / Nbefore
 
         # Number of time point after electrict field is turned off
-        Nafter = count(x -> x > toff, t)
+        Nafter = count(x -> x > toff, t) - 1
         Eafter = sum(E[(N-Nafter + 1):N]) / Nafter
 
         ΔE[i] = Eafter - Ebefore
