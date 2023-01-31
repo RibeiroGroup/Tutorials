@@ -71,7 +71,7 @@ Starting our model with two position values $y_0$ and $y_1$, we can use equation
 
 ### Energy computation
 
-The energy of the system can be computed from its kinetic and potential component. The potential energy at some time $t_n$ is simply a function of the position. However, to compute the kinetic energy we need information of the velocity. Subtracting Equation 3 from 2, we get
+The energy of the system can be computed from its kinetic and potential component. The potential energy at some time $t_n$ is simply a function of the position, you can ignore the potential energy arising from the interaction with the electrical field. To compute the kinetic energy we need information of the velocity. Subtracting Equation 3 from 2, we get
 
 $\Large y_{n+1} - y_{n-1} = 2\dot{y}_n \Delta t + \mathcal{O}(\Delta t^2)$
 
@@ -80,7 +80,7 @@ Thus,
 $\Large v_n = \dot{y_n} \approx \frac{y_{n+1} - y_{n-1}}{2 \Delta t} \qquad$ (6)
 
 ## Instructions
-Run a simulation for 15 units of time with 5000 time steps. The electric wave must be turned on at $t = 5.0$ and off at $t = 10.0$. For each time step your simulation must
+Write a function that takes in a number of simulation parameters and returns arrays of position and energy values. For each time step your simulation must
 
 1. Compute the force. Note that the electric force must only be include within the time interval given above.
 
@@ -94,15 +94,23 @@ The following parameters may be used for all computations:
 
 - $E_0 = 20.0$ and $\omega = 5.0$.
 
+- Electrical pulse duration of 10 units of time.
+
+- Total simulation duration of 20 units of time (with the pulse happening in the middle).
+
 ### Task 1:
 
 Plot position over time for different detuning values: 0.5, 0.8, 1.0, 1.2, 1.5
 
-> Feel free to also plot the electric field intensity in the same pociture!
+> Feel free to also plot the electric field intensity in the same picture!
 
 ### Task 2:
 
-Plot energy transferred (energy before the electrict pulse minus energy after the electric pulse) as a function of detuning values (0.4 - 1.6 with steps of 0.01).
+Plot energy transferred (energy before the electric pulse minus energy after the electric pulse) as a function of detuning values (0.4 - 1.6 with steps of 0.01). The result should resemble an absorption spectrum.
 
-> For less noisy results, you can average the energy before and after the electric pulse and take their difference as the energy absorded. 
+> For less noisy results, you can average the energy before and after the electric pulse and take their difference as the energy absorbed. 
+
+### Task 3:
+
+Repeat the energy transferred computations for different values of pulse duration (8, 10, 15, 20, 30). Normalize the energy transferred and plot them in the same pictures for comparison. How does the pulse duration affects the absorption spectra?
 
