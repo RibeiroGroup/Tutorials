@@ -79,7 +79,7 @@ function position_plot(δ::Vector{Float64}, ω = 5.0, y0 = 2.0, N = 5000, pulse_
         end
     end
     display(fig)
-    #save("positions.png", fig, px_per_unit = 8)
+    save("task1.png", fig, px_per_unit = 2)
 end
 
 ### Compute energy transfered
@@ -118,7 +118,7 @@ function plot_energy_transferred(δvals; ω = 5.0, y0 = 2.0, N = 5000, pulse_dur
     fig = Figure()
     ax = Axis(fig[1,1], xlabel = "δ", ylabel = "Energy transferred")
     lines!(ax, δvals, ΔE)
-#    save("energy.png", fig, px_per_unit = 4)
+    save("task2.png", fig, px_per_unit = 2)
     display(fig)
 end
 
@@ -136,6 +136,7 @@ function plot_et_versus_duration(pdvals, δvals; ω = 5.0, y0 = 2.0, N = 5000, E
     end
 
     axislegend("Pulse duration", position = :lt)
+    save("task3.png", fig, px_per_unit = 2)
     display(fig)
 end
 
