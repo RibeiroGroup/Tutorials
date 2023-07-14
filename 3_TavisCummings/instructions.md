@@ -136,18 +136,18 @@ Multiplying out the operators yields
 
 $$\Large \hat{H}\_{LM} = -i\sum_k g_{kM}(\hat{a}_k\hat{\sigma}^+   - \hat{a}_k^\dagger\hat{\sigma}^- + \hat{a}_k\hat{\sigma}^-   - \hat{a}_k^\dagger\hat{\sigma}^+) $$
 
-In the first term a photon is annihilated as a molecule is excited. Thus, it can be linked to the absorption process. Similarly, the second term involves the deexcitation of a molecule following the creation of a photon. This can be see as emission. However, the last two terms lack a simple interpretation, as they are pairs of raising or lowering operators. Another traditional approximation is to neglect those terms, as they are not "energy conserving". This argument is slightly misleading since energy must conserved even if those terms are included. As it turns out, neglecting these terms is equivalent to the Rotating Wave Approximation (RWA) discussed on the [previous project](../2_RabiOscillations/b_rwa_analytical.md). To understand this, let us compute a matrix element arising from $\hat{a}_k\hat{\sigma}^+$ and compare to $\hat{a}_k^\dagger\hat{\sigma}^+$
+In the first term, a photon is annihilated as a molecule is excited. Thus, it can be linked to the absorption process. Similarly, the second term can represent emission where the deexcitation of a molecule is followed by the creation of a photon. However, the last two terms lack a simple interpretation, as they are pairs of raising or lowering operators. Another traditional approximation is to neglect those terms, as they are not "energy conserving". This argument is slightly misleading since energy must be conserved even if those terms are included. As it turns out, neglecting these terms is equivalent to the Rotating Wave Approximation (RWA) discussed in the [previous project](../2_RabiOscillations/b_rwa_analytical.md). To understand this, let us compute a matrix element arising from $\hat{a}_k\hat{\sigma}^+$ and compare to $\hat{a}_k^\dagger\hat{\sigma}^+$
 
 $$\Large \langle\psi_1|\hat{a}_k\hat{\sigma}^+|n,g\rangle\qquad 
 \langle\psi_2|\hat{a}_k^\dagger\hat{\sigma}^+|n,g\rangle $$
 
-where $|n,g\rangle$ represents a state with $n$ photons in a mode $k$ and a molecule in its ground state. In the Schrödinger picture, this includes a time dependent phase that here we must write explicitly
+where $|n,g\rangle$ represents a state with $n$ photons in a mode $k$ and a molecule in its ground state. In the Schrödinger picture, this includes a time-dependent phase that here we must write explicitly
 
 $$\Large |n,g\rangle \rightarrow e^{in\omega_k t} |n,g\rangle$$
 
 $$\Large |n,e\rangle \rightarrow e^{i(n\omega_k + \omega_{M})t} |n,e\rangle$$
 
-where we assume the energy of the molecular ground state is zero and the energy of the excited states is $\hbar \omega_{M}$. In order yield a non zero matrix element, we must have
+where we assume the energy of the molecular ground state is zero and the energy of the excited states is $\hbar \omega_{M}$. In order to yield a non-zero matrix element, we must have
 
 $$\Large \langle\psi_1| =  \langle e, n-1| \rightarrow \langle e, n-1|e^{-i((n-1)\omega_k + \omega_{M})t}$$
 
@@ -155,9 +155,9 @@ $$\Large \langle\psi_2| =  \langle e, n+1| \rightarrow \langle e, n+1|e^{-i((n+1
 
 Putting all pieces together we get
 
-$$\Large \langle n-1,e|\hat{a}_k\hat{\sigma}^+|n,g\rangle = e^{-i[(n-1)\omega_k + \omega_{M}]t}e^{in\omega_k t} = e^{-i({\omega_{M} - \omega_k})t}$$ 
+$$\Large \langle n-1,e|\hat{a}_k\hat{\sigma}^+|n,g\rangle = e^{-i[(n-1)\omega_k+\omega_M]t} e^{in\omega_k t} = e^{-i[\omega_M-\omega_k]t}$$ 
 
-$$\Large \langle n+1,e|\hat{a}_k^\dagger\hat{\sigma}^+|n,g\rangle = e^{-i[(n+1)\omega_k + \omega_{M}]t}e^{in\omega_k t} = e^{-i({\omega_{M} + \omega_k})t}$$
+$$\Large \langle n+1,e|\hat{a}_k^\dagger\hat{\sigma}^+|n,g\rangle = e^{-i[(n+1)\omega_k+\omega_M]t} e^{in\omega_k t} = e^{-i[\omega_M+\omega_k]t}$$
 
 Here, the argument used in the RWA becomes clearer: matrix elements of two-raising operators oscillate at high frequency and are expected to be averaged out. Once this approximation is implemented, our final Hamiltonian for light-matter interaction becomes
 
