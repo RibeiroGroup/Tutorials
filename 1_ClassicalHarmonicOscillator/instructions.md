@@ -112,5 +112,5 @@ Plot energy transferred (energy before the electric pulse minus energy after the
 
 ### Task 3:
 
-Repeat the energy transferred computations for different values of pulse duration (8, 10, 15, 20, 30). Normalize the energy transferred and plot them in the same pictures for comparison. How does the pulse duration affects the absorption spectra?
+Repeat the energy transferred computations for different values of pulse duration (8, 10, 15, 20, 30). Normalize the energy transferred and plot them in the same pictures for comparison. How does the pulse duration affect the absorption spectra?
 

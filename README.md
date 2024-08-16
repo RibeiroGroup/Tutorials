@@ -10,7 +10,7 @@
 
 # Light-Matter Interactions
 
-## Fully classical
+## Classical Oscillator
 1. [Classical Harmonic Oscillator interacting with light (fixed periodic field)](1_ClassicalHarmonicOscillator/instructions.md)
 
 ## Semi-classical
