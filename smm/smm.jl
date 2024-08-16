@@ -9,24 +9,6 @@ struct ScatterMatrix{M}
     S22::M
 end
 
-function Base.show(io::IO, S::ScatterMatrix)
-
-    f(x) = x
-
-    fe = FormatExpr(
-    """{1.img}  {2} | {3}  {4} \n
-     {5}  {6} | {7}  {8} \n
-     ------------------- \n
-     {9} {10} | {11} {12}\n
-     {13} {14}| {15} {16}""")
-
-    printfmt(fe, S.S11[1,1], S.S11[1,2], S.S12[1,1], S.S12[1,2],
-                 S.S11[2,1], S.S11[2,2], S.S12[2,1], S.S12[2,2],
-                 S.S21[1,1], S.S21[1,2], S.S22[1,1], S.S22[1,2],
-                 S.S21[2,1], S.S21[2,2], S.S22[2,1], S.S22[2,2])
-end
-
-
 # All quantities are normalized kx = kx/k0, z = k0L
 function ScatterMatrix(kx, ky, ϵr, μr, zp)
     
@@ -200,4 +182,43 @@ function dbr(θ, n1, n2, N, l1, l2, λ; ϕ=0.0)
     cinc = [1.0, 0.0]
 
     return compute_RT(Sdevice, cinc, k[1], k[2])
+end
+
+function dbr_cavity(θ, L, nc, n1, n2, N, l1, l2, λ; ϕ=0.0)
+
+    k0 = 2π/λ  
+    k = [sin(θ)*cos(ϕ), sin(θ)*sin(ϕ), cos(θ)]
+
+    # Assume all materials are non-magnetic
+    μ = 1.0
+
+    # Dielectric constants are obtained from refractive index
+    ϵ1 = n1^2
+    ϵ2 = n2^2
+
+    # Get scatter matrix for layer 1
+    S1 = ScatterMatrix(k[1], k[2], ϵ1, μ, k0*l1)
+    # Get scatter matrix for layer 2
+    S2 = ScatterMatrix(k[1], k[2], ϵ2, μ, k0*l2)
+    # Get scatter matrix for a bilayer
+    Sbl = S1 ⊗ S2
+
+    # Apply it N times
+    Sdevice = Sbl
+    for n in 2:N
+       Sdevice = Sbl ⊗ Sdevice
+    end
+
+    # We will consider that the inside of the cavity
+    ϵ = nc^2
+    Scav = ScatterMatrix(k[1], k[2], ϵ, μ, k0*L)
+
+    # Total S matrix
+    #Stotal = Sdevice ⊗ Scav ⊗  Sdevice
+    Stotal = Sdevice ⊗ Scav ⊗  S2 ⊗  Sdevice
+
+    # Assume light is polarized along x
+    cinc = [1.0, 0.0]
+
+    return compute_RT(Stotal, cinc, k[1], k[2])
 end
