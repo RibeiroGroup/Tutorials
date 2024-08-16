@@ -74,7 +74,7 @@ A template for this function is shown below
 ```julia
 function solutionB(ωmin, ωmax, ωba, Vab_vals; t_final = 8000, δt = 1)
 
-    # Use 100 steps between maximum e mininum values
+    # Use 100 steps between maximum and mininum values
     δω = (ωmax - ωmin) / 100
 
     ωvals = [ωmin + i*δω for i = 1:100]
@@ -98,7 +98,7 @@ end
 ```
 Using this function prepare and save a figure with the following parameters:
 
-- $\omega$ range: from 1400 to 1600, 100 steps. 
+- $\omega$ range: from 14000 to 16000, 100 steps. 
 - $\omega_{ba} = 15000$ cm $^{-1}$.
 - $V_{ab}$ values: $50$, $100$, $200$, and $300$ cm $^{-1}$.
 
