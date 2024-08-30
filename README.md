@@ -18,3 +18,8 @@
 
 ## Fully quantum
 3. [Strong light-matter interactions](3_TavisCummings/instructions.md)
+
+# Electrodynamics
+
+## Optical Structures
+1. [Transfer Matrix Method](https://github.com/gustavojra/Tutorials/blob/main/4_TransferMatrixMethod/Instructions.pdf)
