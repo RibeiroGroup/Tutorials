@@ -30,4 +30,4 @@ In this folder, you will find a vast number of tutorials created along the years
 # 2025
 
 ## Introduction to optical cavities
-1. [Jaynes-Tavis-Cummings Model: Interaction with a single cavity mode](Tutorials_2025/1_JaynesTavisCummingsModel/TC_JC_tutorial_final_question_only.ipynb)
+1. [Jaynes-Tavis-Cummings Model: Interaction with a single cavity mode](Tutorials_2025/JaynesTavisCummingsModel/TC_JC_tutorial_final_question_only.ipynb)
