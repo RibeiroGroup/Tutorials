@@ -31,3 +31,9 @@ In this folder, you will find a vast number of tutorials created along the years
 
 ## Introduction to optical cavities
 1. [Jaynes-Tavis-Cummings Model: Interaction with a single cavity mode](Tutorials_2025/JaynesTavisCummingsModel/TC_JC_tutorial_final_question_only.ipynb)
+
+## Quantum Transport
+1. [Dynamics & Transport](Tutorials_2025/Transport/Dynamics&Transport.ipynb)
+
+## Introduction to Topological Matter
+1. [Integer Quantum Hall Effect (IQHE)](Tutorials_2025/Quantum_Hall_Effect/QHE.ipynb)
